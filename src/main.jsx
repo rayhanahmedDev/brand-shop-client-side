@@ -10,6 +10,10 @@ import AuthProvider from './Router/AuthProvider.jsx';
 import Root from './Layout/Root';
 import Error from './Pages/Error';
 import Home from './Pages/Home';
+import Login from './Pages/Login';
+import Register from './Pages/Register';
+import AddProduct from './Pages/AddProduct';
+import MyCart from './Pages/MyCart';
 
 const router = createBrowserRouter([
   {
@@ -20,6 +24,22 @@ const router = createBrowserRouter([
       {
         path:'/',
         element:<Home></Home>
+      },
+      {
+        path:'/login',
+        element:<Login></Login>
+      },
+      {
+        path:'/register',
+        element:<Register></Register>
+      },
+      {
+        path:'/addproduct',
+        element:<AddProduct></AddProduct>
+      },
+      {
+        path:'/mycart',
+        element:<MyCart></MyCart>
       }
     ]
   },
