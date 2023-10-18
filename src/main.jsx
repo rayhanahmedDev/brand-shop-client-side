@@ -14,6 +14,7 @@ import Login from './Pages/Login';
 import Register from './Pages/Register';
 import AddProduct from './Pages/AddProduct';
 import MyCart from './Pages/MyCart';
+import PrivateRoute from './Router/PrivateRoute';
 
 const router = createBrowserRouter([
   {
@@ -23,7 +24,7 @@ const router = createBrowserRouter([
     children:[
       {
         path:'/',
-        element:<Home></Home>
+        element:<PrivateRoute><Home></Home></PrivateRoute>
       },
       {
         path:'/login',

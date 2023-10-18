@@ -5,7 +5,7 @@ import { AuthContext } from "../Router/AuthProvider";
 
 const Register = () => {
     
-    const {googleLogin} = useContext(AuthContext)
+    const {googleLogin,createUser} = useContext(AuthContext)
 
     const [registerError, setRegisterError] = useState('')
     const [success, setSuccess] = useState('')
@@ -85,10 +85,10 @@ const Register = () => {
                         </div>
                         <p className='text-center text-white'>Already have an account?<Link to='/login' className="font-bold ml-2">Login</Link></p>
                         {
-                            registerError && <p className='text-center text-[#FF0000]'>{registerError}</p>
+                            registerError && <p className='text-center text-white'>{registerError}</p>
                         }
                         {
-                            success && <p className='text-center text-[#CC009C]'>{success}</p>
+                            success && <p className='text-center text-white'>{success}</p>
                         }
                     </form>
                     
