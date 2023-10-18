@@ -50,10 +50,10 @@ const Navber = () => {
                      </label>
                      <ul tabIndex={0} className="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52">
                          <li>
-                         <button className="btn btn-sm my-2 bg-[#FF3300] text-white">{user.displayName}</button>
+                         <button className="btn btn-sm my-2 bg-gradient-to-r from-[#FF3300] to-[#FF8938] text-white">{user.displayName}</button>
                          </li>
                          <li>
-                             <button onClick={handleLogOut} className="btn btn-sm bg-[#FF3300] text-white">Logout</button>
+                             <button onClick={handleLogOut} className="btn btn-sm bg-gradient-to-r from-[#FF3300] to-[#FF8938] text-white">Logout</button>
 
                          </li>
                      </ul>

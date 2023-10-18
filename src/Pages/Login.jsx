@@ -48,8 +48,8 @@ const Login = () => {
 
     return (
         <div>
-            <div className="hero my-16 pb-12">              
-                    <div className="card bg-[#FF3300] flex-shrink-0 w-full max-w-sm shadow-2xl">
+            <div className="hero lg:my-16 pb-12">              
+                    <div className="card bg-gradient-to-r from-[#FF3300] to-[#FF8938] flex-shrink-0 w-full max-w-sm shadow-2xl">
                         <form onSubmit={handleSignIn}  className="card-body">
                             <div className="form-control">
                                 <label className="label">
