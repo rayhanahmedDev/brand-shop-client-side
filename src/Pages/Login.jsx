@@ -64,10 +64,10 @@ const Login = () => {
                                 <input type="password" name="password" placeholder="Your Password" className="input" required />
                             </div>
                             <div className="form-control mt-6">
-                                <button className="btn bg-white">Login</button>
+                                <button className="btn bg-white text-[#FF3300]">Login</button>
                             </div>
                             <div className="form-control mt-6">  
-                         <button onClick={handleGoogle} className="btn w-full bg-white"> <FcGoogle className='text-[31px]'></FcGoogle> Login With Google</button>
+                         <button onClick={handleGoogle} className="btn w-full bg-white text-[#FF3300]"> <FcGoogle className='text-[31px]'></FcGoogle> Login With Google</button>
                         </div>
                         <p className='text-center text-white'>Don’t have an account?<Link to='/register' className="font-bold text-white ml-2">Register</Link></p>
                         {

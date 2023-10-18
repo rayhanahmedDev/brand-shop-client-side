@@ -78,10 +78,10 @@ const Register = () => {
                             <input type="password" name='password' placeholder="Your Password" className="input " required />
                         </div>
                         <div className="form-control mt-6">
-                            <button className="btn bg-white text-red-500">Register</button>
+                            <button className="btn bg-white text-[#FF3300]">Register</button>
                         </div>
                         <div className="form-control mt-6">  
-                         <button onClick={handleGoogle} className="btn w-full  bg-white text-red-500"> <FcGoogle className='text-[31px]'></FcGoogle> Register With Google</button>
+                         <button onClick={handleGoogle} className="btn w-full  bg-white text-[#FF3300]"> <FcGoogle className='text-[31px]'></FcGoogle> Register With Google</button>
                         </div>
                         <p className='text-center text-white'>Already have an account?<Link to='/login' className="font-bold ml-2">Login</Link></p>
                         {
