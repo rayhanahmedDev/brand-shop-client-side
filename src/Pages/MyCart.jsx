@@ -1,18 +1,24 @@
 import { useLoaderData } from "react-router-dom";
 import Cards from "../component/Cards";
+import { useState } from "react";
 
 
 const MyCart = () => {
     const loadData = useLoaderData()
-
+    const [deleted, setDeleted] = useState(loadData)
     return (
         <div className="max-w-7xl mx-auto border border-red-500">
-               <h2>Add Products : {loadData.length}</h2>
-               <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
+            <h2>Add Products : {loadData.length}</h2>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
                 {
-                    loadData.map(data => <Cards key={data._id} data={data}></Cards>)
+                    deleted.map(data => <Cards
+                        key={data._id}
+                        deleted={deleted}
+                        setDeleted={setDeleted}
+                        data={data}>
+                    </Cards>)
                 }
-               </div>
+            </div>
         </div>
     );
 };

@@ -1,10 +1,23 @@
 import PropTypes from 'prop-types';
 
-const Cards = ({ data }) => {
+const Cards = ({ data,setDeleted,deleted }) => {
     const {_id, computer, photo,description,price,brand} = data;
 
     const handleDelete = _id =>{
         console.log(_id)
+
+        fetch(`http://localhost:5000/users/${_id}`,{
+            method:"DELETE"
+        })
+        .then(res => res.json())
+        .then(data => {
+            console.log(data);
+           if(data.deletedCount > 0){
+            alert('delete successfully')
+            const remaining = deleted.filter(del => del._id !==_id)
+            setDeleted(remaining)
+           }
+        })
     }
     return (
         <div>
