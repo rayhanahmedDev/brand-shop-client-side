@@ -24,7 +24,7 @@ const router = createBrowserRouter([
     children:[
       {
         path:'/',
-        element:<PrivateRoute><Home></Home></PrivateRoute>
+        element:<Home></Home>
       },
       {
         path:'/login',
@@ -36,7 +36,7 @@ const router = createBrowserRouter([
       },
       {
         path:'/addproduct',
-        element:<AddProduct></AddProduct>
+        element:<PrivateRoute><AddProduct></AddProduct></PrivateRoute>
       },
       {
         path:'/mycart',

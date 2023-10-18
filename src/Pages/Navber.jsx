@@ -1,7 +1,19 @@
-import { NavLink } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 import './Navber.css'
+import { useContext } from "react";
+import { AuthContext } from "../Router/AuthProvider";
+import '../../public/logo.jpg'
 
 const Navber = () => {
+
+    const {user,logOut} = useContext(AuthContext)
+
+    const handleLogOut = ()=>{
+        logOut()
+        .then()
+        .catch()
+    }
+
     const links = <>
     <li><NavLink className='mr-4' to='/'>Home</NavLink></li>
     <li><NavLink className='mr-4' to='/addproduct'> Add Product</NavLink></li>
@@ -11,7 +23,7 @@ const Navber = () => {
     
     </>
     return (
-        <div className="navbar bg-[#FFFFFF] shadow md:px-44 py-6">
+        <div className="navbar bg-[#FFFFFF] shadow md:px-36">
             <div className="navbar-start">
                 <div className="dropdown">
                     <label tabIndex={0} className="btn btn-ghost lg:hidden">
@@ -21,7 +33,7 @@ const Navber = () => {
                         {links}
                     </ul>
                 </div>
-                <a className="btn btn-ghost normal-case text-xl">daisyUI</a>
+               <img className="h-20" src="logo.jpg" alt="" />
             </div>
             <div className="navbar-center hidden lg:flex">
                 <ul className="menu-horizontal px-1">
@@ -29,8 +41,27 @@ const Navber = () => {
                 </ul>
             </div>
             <div className="navbar-end">
-                <a className="btn">Button</a>
-            </div>
+                   {
+                     user?.email ? <div className="dropdown dropdown-end">
+                     <label tabIndex={0} className="btn btn-ghost btn-circle avatar">
+                         <div className="w-16 rounded-full">
+                             <img src={user.photoURL} />
+                         </div>
+                     </label>
+                     <ul tabIndex={0} className="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52">
+                         <li>
+                         <button className="btn btn-sm my-2 bg-[#FF3300] text-white">{user.displayName}</button>
+                         </li>
+                         <li>
+                             <button onClick={handleLogOut} className="btn btn-sm bg-[#FF3300] text-white">Logout</button>
+
+                         </li>
+                     </ul>
+                 </div>
+                     :
+                     <Link to='/login'><button onClick={handleLogOut} className="btn btn-outline btn-secondary">Login</button></Link>
+                   }
+                </div>
         </div>
     );
 };
