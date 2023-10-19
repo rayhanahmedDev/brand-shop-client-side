@@ -74,7 +74,7 @@ const AddProduct = () => {
                                     <option value="phone">Phone</option>
                                     <option value="headphone">Headphone</option>
                                     <option value="computer">Computer</option>
-                                    <option value="watch">Watch</option>
+                                    <option value="Watch">Watch</option>
                                     <option value="tv">TV</option>
                                 </select>
                                 {/* <input type="text" name='computer' placeholder="" className="input input-bordered w-full" /> */}

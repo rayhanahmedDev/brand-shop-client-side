@@ -7,8 +7,7 @@ const MyCart = () => {
     const loadData = useLoaderData()
     const [deleted, setDeleted] = useState(loadData)
     return (
-        <div className="max-w-7xl mx-auto border border-red-500">
-            <h2>Add Products : {loadData.length}</h2>
+        <div className="max-w-7xl mx-auto mt-12 pb-12">
             <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
                 {
                     deleted.map(data => <Cards

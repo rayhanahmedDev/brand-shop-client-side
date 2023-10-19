@@ -1,22 +1,41 @@
 import PropTypes from 'prop-types';
+import Swal from 'sweetalert2';
 
-const Cards = ({ data,setDeleted,deleted }) => {
-    const {_id, computer, photo,description,price,brand} = data;
+const Cards = ({ data, setDeleted, deleted }) => {
+    const { _id, computer, photo, description, price, brand } = data;
 
-    const handleDelete = _id =>{
+    const handleDelete = _id => {
         console.log(_id)
 
-        fetch(`http://localhost:5000/users/${_id}`,{
-            method:"DELETE"
-        })
-        .then(res => res.json())
-        .then(data => {
-            console.log(data);
-           if(data.deletedCount > 0){
-            alert('delete successfully')
-            const remaining = deleted.filter(del => del._id !==_id)
-            setDeleted(remaining)
-           }
+        Swal.fire({
+            title: 'Are you sure?',
+            text: "You won't be able to revert this!",
+            icon: 'warning',
+            showCancelButton: true,
+            confirmButtonColor: '#3085d6',
+            cancelButtonColor: '#d33',
+            confirmButtonText: 'Yes, delete it!'
+        }).then((result) => {
+            if (result.isConfirmed) {
+
+                fetch(`http://localhost:5000/users/${_id}`, {
+                    method: "DELETE"
+                })
+                    .then(res => res.json())
+                    .then(data => {
+                        console.log(data);
+                        if (data.deletedCount > 0) {
+                            Swal.fire(
+                                'Deleted!',
+                                'Your Product has been deleted.',
+                                'success'
+                            )
+                            const remaining = deleted.filter(del => del._id !== _id)
+                            setDeleted(remaining)
+                        }
+
+                    })
+            }
         })
     }
     return (
@@ -35,7 +54,7 @@ const Cards = ({ data,setDeleted,deleted }) => {
                     <p className="mb-3 font-normal text-gray-700 dark:text-gray-400">Type : {computer}</p>
 
                     {/* btn section */}
-                    <button onClick={()=>handleDelete(_id)} className="btn w-20 bg-gradient-to-r from-[#FF3300] to-[#FF8938]">X</button>
+                    <button onClick={() => handleDelete(_id)} className="btn w-20 bg-gradient-to-r from-[#FF3300] to-[#FF8938] ">X</button>
                 </div>
             </div>
         </div>
