@@ -16,6 +16,7 @@ import AddProduct from './Pages/AddProduct';
 import MyCart from './Pages/MyCart';
 import PrivateRoute from './Router/PrivateRoute';
 
+
 const router = createBrowserRouter([
   {
     path: "/",
@@ -42,7 +43,7 @@ const router = createBrowserRouter([
         path:'/mycart',
         element:<PrivateRoute><MyCart></MyCart></PrivateRoute>,
         loader: ()=> fetch('http://localhost:5000/users')
-      }
+      },
     ]
   },
 ]);

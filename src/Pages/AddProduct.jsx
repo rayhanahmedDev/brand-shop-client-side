@@ -124,7 +124,7 @@ const AddProduct = () => {
                             <input type="text" name="photo" placeholder="Photo URL" className="input input-bordered w-full" />
                         </label>
                     </div>
-                    <input type="submit" value="Add to Cart" className="btn btn-block mt-8 bg-white text-[#FF3300]" />
+                    <input type="submit" value="Add button" className="btn btn-block mt-8 bg-white text-[#FF3300]" />
                 </form>
             </div>
         </div>

@@ -4,7 +4,7 @@ import '../../../public/computer-png-28449-removebg-preview.png'
 const Banner = () => {
     return (
         <div>
-            <div className="hero mt-8 h-[70vh] bg-white shadow">
+            <div className="hero mt-8 lg:h-[70vh] bg-white shadow">
                 <div className="hero-content flex-col  lg:flex-row-reverse">
                   <div className='lg:w-2/4'>
                   <img src="computer-png-28449-removebg-preview.png" className="w-full rounded-lg" />

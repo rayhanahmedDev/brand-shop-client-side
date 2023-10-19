@@ -1,0 +1,33 @@
+[
+    {
+      "id": "E12345",
+      "img": "https://i.ibb.co/fGGjTW0/dc36c1d02dfe2ec192b7ec6d2289cb2d-600x315w.png",
+      "name": "Samsung"
+    },
+    {
+      "id": "E23456",
+      "img": "https://i.ibb.co/LvHJvP5/download-removebg-preview.png",
+      "name": "Google"
+    },
+    {
+      "id": "E34567",
+      "img": "https://i.ibb.co/CbP1NCB/apple-logo-black-svg.png",
+      "name": "Apple"
+    },
+    {
+      "id": "E45678",
+      "img": "https://i.ibb.co/Vj6QHZm/walton-group-logo-brandlogos-net-hnngy-512x512.png",
+      "name": "Walton"
+    },
+    {
+      "id": "E56789",
+      "img": "https://i.ibb.co/bbq7Kp0/download.png",
+      "name": "Sony"
+    },
+    {
+      "id": "E67890",
+      "img": "https://i.ibb.co/mhHZHyd/Itel-Mobile-logo.png",
+      "name": "Itel"
+    }
+  ]
+  
