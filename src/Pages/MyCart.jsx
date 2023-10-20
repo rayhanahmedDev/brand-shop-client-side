@@ -4,7 +4,7 @@ import { useState } from "react";
 
 
 const MyCart = () => {
-    const loadData = useLoaderData()
+    const loadData = useLoaderData();
     const [deleted, setDeleted] = useState(loadData)
     return (
         <div className="max-w-7xl mx-auto mt-12 pb-12">

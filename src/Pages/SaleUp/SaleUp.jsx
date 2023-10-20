@@ -4,6 +4,7 @@ import Blog from "../../component/Blog";
 
 const SaleUp = () => {
     const [blogs, setBlogs] = useState([])
+    
     useEffect(()=>{
         fetch('blog.json')
         .then(res => res.json())

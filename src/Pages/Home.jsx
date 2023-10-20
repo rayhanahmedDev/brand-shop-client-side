@@ -3,6 +3,7 @@ import Banner from "./Banner/Banner";
 import Brand from "./Brand/Brand";
 import Footer from "./Footer/Footer";
 import Insta from "./Insta/Insta";
+
 import SaleUp from "./SaleUp/SaleUp";
 
 const Home = () => {
@@ -22,6 +23,8 @@ const Home = () => {
                 </div>
                 <div>
                     <Insta></Insta>
+                </div>
+                <div>
                 </div>
             </div>
 
