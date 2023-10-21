@@ -18,6 +18,7 @@ import PrivateRoute from './Router/PrivateRoute';
 import Product from './Pages/Product/Product';
 import Update from './Pages/Update/Update';
 import Details from './Pages/Details/Details';
+import Prod from './Pages/Product/Prod';
 
 
 
@@ -46,22 +47,26 @@ const router = createBrowserRouter([
       {
         path:'/mycart',
         element:<PrivateRoute><MyCart></MyCart></PrivateRoute>,
-        loader: ()=> fetch('http://localhost:5000/users')
+        loader: ()=> fetch('https://brand-shop-assignment-server-flrrilml5-rayhans-projects.vercel.app/users')
       },
       {
         path:'/products/:brand',
         element: <Product></Product>,
-        loader: ({params}) => fetch(`http://localhost:5000/brand/${params.brand}`)
+        loader: ({params}) => fetch(`https://brand-shop-assignment-server-flrrilml5-rayhans-projects.vercel.app/brand/${params.brand}`)
       },
       {
         path:'/update/:id',
         element:<PrivateRoute><Update></Update></PrivateRoute>,
-        loader: ({params})=> fetch(`http://localhost:5000/brandadd/${params.id}`)
+        loader: ({params})=> fetch(`https://brand-shop-assignment-server-flrrilml5-rayhans-projects.vercel.app/brandadd/${params.id}`)
       },
       {
         path:'/detail/:id',
         element:<PrivateRoute><Details></Details></PrivateRoute>,
-        loader: ({params}) => fetch(`http://localhost:5000/brandadd/${params.id}`)
+        loader: ({params}) => fetch(`https://brand-shop-assignment-server-flrrilml5-rayhans-projects.vercel.app/brandadd/${params.id}`)
+      },
+      {
+        path: '/products/prod',
+        element:<Prod></Prod>
       }
     ]
   },

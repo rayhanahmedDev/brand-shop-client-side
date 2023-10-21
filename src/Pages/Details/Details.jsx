@@ -5,7 +5,7 @@ const Details = () => {
     const detailData = useLoaderData()
 
     const handleAddToCart = () =>{
-        fetch('http://localhost:5000/users',{
+        fetch('https://brand-shop-assignment-server-flrrilml5-rayhans-projects.vercel.app/addcard',{
             method:"POST",
             headers:{
                 "content-type" : "application/json",

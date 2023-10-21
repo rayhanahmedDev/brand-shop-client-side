@@ -18,7 +18,7 @@ const Cards = ({ data, setDeleted, deleted }) => {
         }).then((result) => {
             if (result.isConfirmed) {
 
-                fetch(`http://localhost:5000/users/${_id}`, {
+                fetch(`https://brand-shop-assignment-server-flrrilml5-rayhans-projects.vercel.app/users/${_id}`, {
                     method: "DELETE"
                 })
                     .then(res => res.json())

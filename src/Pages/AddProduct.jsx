@@ -18,7 +18,7 @@ const AddProduct = () => {
         }
         console.log(user)
 
-        fetch('http://localhost:5000/users', {
+        fetch('https://brand-shop-assignment-server-flrrilml5-rayhans-projects.vercel.app/users', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'

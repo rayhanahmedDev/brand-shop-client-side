@@ -8,7 +8,6 @@ import SaleUp from "./SaleUp/SaleUp";
 
 const Home = () => {
 
-
     return (
         <div>
             <div className="max-w-7xl mx-auto ">

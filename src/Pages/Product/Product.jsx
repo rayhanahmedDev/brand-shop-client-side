@@ -13,10 +13,14 @@ const Product = () => {
             <div className="mb-12">
                 <BrandBanner></BrandBanner>             
             </div>
+
+            <div>
+                <h2 className="text-4xl text-purple-600 font-medium text-center mb-12">Brand <span className="text-[#FF3300]">Category</span></h2>
             <div className="grid grid-cols-1 lg:grid-cols-4 gap-5">
                 {
-                    dataLoad.map(data => <BrandData key={data._id} data={data}></BrandData>)
+                 dataLoad?.map(data => <BrandData key={data._id} data={data}></BrandData>)
                 }
+            </div>
             </div>
         </div>
     );

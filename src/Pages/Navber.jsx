@@ -2,7 +2,8 @@ import { Link, NavLink } from "react-router-dom";
 import './Navber.css'
 import { useContext } from "react";
 import { AuthContext } from "../Router/AuthProvider";
-import '../../public/logo.jpg'
+// import '../../public/logo2.png'
+
 
 const Navber = () => {
 
@@ -33,7 +34,7 @@ const Navber = () => {
                         {links}
                     </ul>
                 </div>
-               <img className="h-20" src="logo.jpg" alt="" />
+               <img className="h-24" src="https://i.ibb.co/smt42VN/logo2.png" alt="" />
             </div>
             <div className="navbar-center hidden lg:flex">
                 <ul className="menu-horizontal px-1">

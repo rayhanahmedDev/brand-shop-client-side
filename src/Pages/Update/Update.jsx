@@ -23,7 +23,7 @@ const Update = () => {
         }
         console.log(user)
 
-        fetch(`http://localhost:5000/brandup/${data._id}`,{
+        fetch(`https://brand-shop-assignment-server-flrrilml5-rayhans-projects.vercel.app/brandup/${data._id}`,{
             method:"PUT",
             headers: {
                 "content-type" : "application/json",
@@ -112,7 +112,7 @@ const Update = () => {
                                 <input type="number"
                                     name="rating"
                                     placeholder="Rating"
-                                    defaultValue={data.rating}
+                                   
                                     step="0.1"
                                     min="0"
                                     max="5"
