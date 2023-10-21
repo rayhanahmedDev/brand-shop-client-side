@@ -1,26 +1,45 @@
-import { useLoaderData} from "react-router-dom";
-
-
+import { useLoaderData } from "react-router-dom";
+import Swal from "sweetalert2";
 
 const Details = () => {
     const detailData = useLoaderData()
+
+    const handleAddToCart = () =>{
+        fetch('http://localhost:5000/users',{
+            method:"POST",
+            headers:{
+                "content-type" : "application/json",
+            },
+            body: JSON.stringify(detailData),
+        })
+        .then(res => res.json())
+        .then(data => {
+            console.log(data)
+            if (data.insertedId) {
+                Swal.fire({
+                    title: 'Success',
+                    text: 'Product Added Successfully',
+                    icon: 'success',
+                    confirmButtonText: 'Close'
+                })
+            }
+        })
+
+    }
     return (
-        <div>
-          <div className="card bg-base-100 shadow-xl">
-                <figure className="px-10 pt-10">
-                    <img src={detailData.photo} alt="Shoes" className="rounded-xl h-44 w-full" />
-                </figure>
+        <div className="lg:h-[70vh] my-12 flex justify-center items-center">
+
+            <div className="card w-96 bg-base-100 shadow-xl">
+                <figure><img className="w-full h-64" src={detailData.photo} alt="Shoes" /></figure>
                 <div className="card-body">
-                    <h2 className="card-title">Brand:{detailData.brand}</h2>
-                    <p>Name : {detailData.name}</p>
-                    <p>Type : {detailData.computer}</p>
+                    <h2 className="card-title">{detailData.name}</h2>
                     <p>Price : ${detailData.price}</p>
-                    <p>Rating : {detailData.rating}</p>
-                    <div className="card-actions flex lg:justify-between">
-                       <button className="btn bg-gradient-to-r from-[#FF3300] to-[#FF8938]">Details</button>
+                    <div className="card-actions">
+                        <button onClick={ handleAddToCart} className="btn bg-gradient-to-r from-[#FF3300] to-[#FF8938]">Add to card</button>
                     </div>
                 </div>
             </div>
+
         </div>
     );
 };
