@@ -17,7 +17,7 @@ const BrandData = ({ data }) => {
                     <p>Price : ${price}</p>
                     <p>Rating : {rating}</p>
                     <div className="card-actions flex lg:justify-between">
-                        <button className="btn bg-gradient-to-r from-[#FF3300] to-[#FF8938]">Details</button>
+                        <Link to={`/detail/${_id}`}><button className="btn bg-gradient-to-r from-[#FF3300] to-[#FF8938]">Details</button></Link>
                         <Link to={`/update/${_id}`}><button className="btn bg-gradient-to-r from-[#FF3300] to-[#FF8938]">Update</button></Link>
                     </div>
                 </div>

@@ -1,13 +1,47 @@
-import { useLoaderData } from "react-router-dom";
+import { useLoaderData, } from "react-router-dom";
+import Swal from "sweetalert2";
 
 
 const Update = () => {
 
     const data = useLoaderData()
-    const { _id, computer, photo, price, name, brand,rating } = data;
+    // const { _id, computer, photo, price, name, brand,rating } = data;
 
-    const handleUpdateProduct = _id => {
-        console.log('hello');
+    const handleUpdateProduct = e => {
+
+        e.preventDefault()
+        const form = e.target
+        const name = form.name.value;
+        const brand = form.brand.value;
+        const computer = form.computer.value;
+        const price = form.price.value;
+        const rating = form.rating.value;
+        const photo = form.photo.value;
+
+        const user = {
+            name, brand, computer, price, rating, photo
+        }
+        console.log(user)
+
+        fetch(`http://localhost:5000/brandup/${data._id}`,{
+            method:"PUT",
+            headers: {
+                "content-type" : "application/json",
+            },
+            body:JSON.stringify(user)
+        })
+        .then(res => res.json())
+        .then(data => {
+            console.log(data)
+            if(data.modifiedCount){
+                Swal.fire({
+                    title: 'Success',
+                    text: 'Product Update Successfully',
+                    icon: 'success',
+                    confirmButtonText: 'Close'
+                })
+            }
+        })
     }
 
     return (
@@ -22,7 +56,7 @@ const Update = () => {
                                 <span className="label-text text-white">Name</span>
                             </label>
                             <label className="input-group">
-                                <input type="text" name="name" defaultValue={name} placeholder="Name" className="input input-bordered w-full" />
+                                <input type="text" name="name" defaultValue={data.name} placeholder="Name" className="input input-bordered w-full" />
                             </label>
                         </div>
                         <div className="form-control md:w-1/2 w-full">
@@ -30,7 +64,7 @@ const Update = () => {
                                 <span className="label-text text-white">Brand Name</span>
                             </label>
                             <label className="input-group">
-                                <input type="text" name="brand" defaultValue={brand} placeholder="Brand Name" className="input input-bordered w-full" />
+                                <input type="text" name="brand" defaultValue={data.brand}  placeholder="Brand Name" className="input input-bordered w-full" />
                             </label>
                         </div>
                     </div>
@@ -41,7 +75,7 @@ const Update = () => {
                                 <span className="label-text text-white">Type</span>
                             </label>
                             <label className="input-group ">
-                                <select id="cars" name="computer" defaultValue={computer} className='input input-bordered w-full'>
+                                <select id="cars" name="computer"defaultValue={data.computer}  className='input input-bordered w-full'>
                                     <option value="phone">Phone</option>
                                     <option value="headphone">Headphone</option>
                                     <option value="computer">Computer</option>
@@ -56,7 +90,7 @@ const Update = () => {
                                 <span className="label-text text-white">Price</span>
                             </label>
                             <label className="input-group">
-                                <input type="text" name="price" defaultValue={price} placeholder="Price" className="input input-bordered w-full" />
+                                <input type="text" name="price"defaultValue={data.price} placeholder="Price" className="input input-bordered w-full" />
                             </label>
                         </div>
                     </div>
@@ -67,7 +101,7 @@ const Update = () => {
                                 <span className="label-text text-white">Photo URL</span>
                             </label>
                             <label className="input-group">
-                                <input type="text" name="photo" defaultValue={photo} placeholder="Photo URL" className="input input-bordered w-full" />
+                                <input type="text" name="photo" defaultValue={data.photo} placeholder="Photo URL" className="input input-bordered w-full" />
                             </label>
                         </div>
                         <div className="form-control md:w-1/2 w-full">
@@ -78,7 +112,7 @@ const Update = () => {
                                 <input type="number"
                                     name="rating"
                                     placeholder="Rating"
-                                    defaultValue={rating}
+                                    defaultValue={data.rating}
                                     step="0.1"
                                     min="0"
                                     max="5"
@@ -86,7 +120,7 @@ const Update = () => {
                             </label>
                         </div>
                     </div>
-                    <input type="submit" value="Submit" className="btn btn-block mt-8 bg-white text-[#FF3300]" />
+                    <input type="submit" value="Submit" className="btn btn-block mt-8 bg-white " />
                 </form>
             </div>
         </div>
