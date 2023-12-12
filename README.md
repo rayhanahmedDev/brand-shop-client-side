@@ -15,3 +15,12 @@
 - Develop projects focused on introducing innovative consumer electronics products, such as smart TVs, refrigerators, or air conditioners.
 
 
+# Unique Project
+
+1. LATEST BLOG
+
+2. CHECK OUR INSTAGRAM
+
+# Project Selling line:
+
+- we provide this site for user. He/She can buy there brand products. saving users time.
